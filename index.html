@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Amritanshu Pandey, Senior Product Manager for AI, data and platform products. Available to join immediately.">
+<title>Amritanshu Pandey</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column, case files stacked like a review log; the agent run is the one bold panel. */
+:root{
+  --bg:#F2F4F6;
+  --surface:#FFFFFF;
+  --ink:#16212B;
+  --muted:#5A6672;
+  --line:#D8DEE4;
+  --accent:#B8661A;      /* reagent amber */
+  --accent-soft:#F6E7D6;
+  --signal:#0F7A6E;      /* review-pass teal */
+  --panel:#15222D;
+  --panel-ink:#DCE6EE;
+  --panel-dim:#8297A8;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11181F; --surface:#18222B; --ink:#E6ECF1; --muted:#97A5B2; --line:#2A3743;
+    --accent:#E39A52; --accent-soft:#2E2318; --signal:#4CC2B2;
+    --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11181F; --surface:#18222B; --ink:#E6ECF1; --muted:#97A5B2; --line:#2A3743;
+  --accent:#E39A52; --accent-soft:#2E2318; --signal:#4CC2B2;
+  --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Header */
+header{padding-block:56px 40px;border-bottom:1px solid var(--line)}
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.avail{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12.5px;padding:5px 12px;border:1px solid var(--signal);color:var(--signal);border-radius:999px}
+.avail::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--signal)}
+h1{font-size:clamp(40px,7vw,64px);font-weight:700;letter-spacing:-.02em;margin-top:28px}
+.role{font-family:var(--f-display);font-weight:500;font-size:clamp(19px,2.6vw,24px);color:var(--muted);margin-top:10px}
+.thesis{font-size:18px;max-width:62ch;margin-top:22px}
+.thesis strong{font-weight:600;background:linear-gradient(transparent 62%, var(--accent-soft) 62%)}
+.contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:15px;align-items:center}
+.contact .mail{font-family:var(--f-mono);font-size:14px;user-select:all}
+.copy{font:500 12px var(--f-mono);background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+
+/* Proof strip */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
+.proof div{padding:22px 16px 22px 0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.proof div + div{padding-left:16px;border-left:1px solid var(--line)}
+.num{font-family:var(--f-display);font-weight:700;font-size:30px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.num small{font-size:18px;color:var(--muted);font-weight:500}
+.proof p{font-size:13.5px;color:var(--muted);line-height:1.45}
+@media (max-width:640px){
+  .proof{grid-template-columns:1fr 1fr}
+  .proof div:nth-child(3){padding-left:0;border-left:0}
+  .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+section{padding-block:52px 8px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+h2{font-size:28px;font-weight:700;letter-spacing:-.01em}
+
+/* Featured build */
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.feature-body{padding:28px;display:grid;gap:18px}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--f-mono);font-size:12px;padding:3px 9px;border-radius:5px;background:var(--accent-soft);color:var(--ink)}
+.feature h3{font-size:25px}
+.feature .lede{font-size:16.5px;max-width:64ch}
+.trace{background:var(--panel);color:var(--panel-ink);font-family:var(--f-mono);font-size:13px;line-height:1.75;padding:22px 28px;overflow-x:auto;margin:0}
+.trace .c{color:var(--panel-dim)}
+.trace .k{color:#E9A562}
+.trace .ok{color:#5FD0BF}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.split > div{min-width:0}
+.split h4{font:600 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.split p,.split li{font-size:15px}
+.split ul{margin:0;padding-left:18px}
+.takeaway{border-top:1px solid var(--line);padding-top:16px;font-size:15.5px;font-style:italic;color:var(--muted)}
+@media (max-width:640px){ .split{grid-template-columns:1fr} .feature-body{padding:22px 18px} .trace{padding:18px} }
+
+/* Case list */
+.cases{display:grid;gap:0}
+.case{display:grid;grid-template-columns:170px 1fr;gap:8px 28px;padding-block:24px;border-top:1px solid var(--line)}
+.case:last-child{border-bottom:1px solid var(--line)}
+.case .meta{display:flex;flex-direction:column;gap:4px;min-width:0}
+.case .org{font-weight:600;font-size:15px}
+.case .when{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.case .body{min-width:0;display:grid;gap:10px}
+.case h3{font-size:20px;font-weight:700}
+.case p{font-size:15.5px;max-width:64ch}
+.metric{font-family:var(--f-mono);font-size:13px;color:var(--signal);font-weight:500}
+@media (max-width:640px){ .case{grid-template-columns:1fr} .case .meta{flex-direction:row;gap:12px;align-items:baseline;flex-wrap:wrap} }
+
+/* Strengths */
+.strengths{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 36px}
+.strengths > div{min-width:0;display:grid;gap:6px}
+.strengths h3{font-size:18px}
+.strengths p{font-size:15px;color:var(--muted)}
+.stack{font-family:var(--f-mono);font-size:12.5px;color:var(--ink)}
+@media (max-width:640px){ .strengths{grid-template-columns:1fr} }
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:4px 24px;padding-block:14px;border-top:1px solid var(--line)}
+.timeline li:last-child{border-bottom:1px solid var(--line)}
+.timeline .yrs{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline .what{min-width:0}
+.timeline b{font-weight:600}
+.timeline span.r{color:var(--muted)}
+.timeline .note{font-size:14px;color:var(--muted);margin-top:2px}
+@media (max-width:640px){ .timeline li{grid-template-columns:1fr} }
+
+/* Education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px}
+.edu > div{min-width:0}
+.edu ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.edu li{font-size:15px}
+.edu li span{display:block;font-size:13.5px;color:var(--muted)}
+@media (max-width:640px){ .edu{grid-template-columns:1fr} }
+
+footer{padding-block:56px 64px}
+footer .closing{font-family:var(--f-display);font-size:clamp(24px,4vw,32px);font-weight:700;max-width:24ch}
+footer .contact{margin-top:18px}
+footer .fine{margin-top:28px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="top">
+    <span class="label">Portfolio · Bengaluru · Open to relocation</span>
+    <span class="avail">Available to join immediately</span>
+  </div>
+  <h1>Amritanshu Pandey</h1>
+  <p class="role">Senior Product Manager · AI, Data &amp; Platform Products</p>
+  <p class="thesis">I build platforms that pull fragmented systems into one working flow. For six years that meant <strong>enterprise AI/ML and clinical data platforms at IQVIA</strong>. Lately it also means agents that do the joining themselves. 15 years in technology, 10 in product, IIM Lucknow MBA, PhD Scholar in Strategic Management.</p>
+  <div class="contact">
+    <span class="mail" id="mail">amritpandeycareer@gmail.com</span>
+    <button class="copy" id="copyBtn" type="button">Copy email</button>
+    <a href="https://www.linkedin.com/in/eramritanshupandey/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+
+<div class="proof" aria-label="Selected outcomes">
+  <div><span class="num">40%</span><p>cross-company adoption of an enterprise AI/ML platform</p></div>
+  <div><span class="num">60<small>→</small>90%</span><p>field accuracy on GenAI document processing, eval-driven</p></div>
+  <div><span class="num">22<small>→</small>35%</span><p>booking conversion on a 400+ hospital network platform</p></div>
+  <div><span class="num">~2M</span><p>users on a patient-facing clinical trial app, 40%+ adherence lift</p></div>
+</div>
+
+<section id="build">
+  <div class="sec-head"><h2>Recent build</h2><span class="label">Hands-on · 2026</span></div>
+  <article class="feature">
+    <div class="feature-body">
+      <div class="tagrow"><span class="tag">Agentic AI</span><span class="tag">MCP</span><span class="tag">Databricks</span><span class="tag">Clinical data review</span><span class="tag">Synthetic data</span></div>
+      <h3>Clinical Data Review Agent</h3>
+      <p class="lede">Every week a clinical data manager opens five systems (patient records, visits, central lab, safety and data queries), compares them by hand and writes up what's wrong. I built an agent that does that legwork. It connects to all five systems, decides what to check next based on what it finds, and produces the review with draft site queries waiting for human approval.</p>
+    </div>
+<pre class="trace" aria-label="Simplified trace of one agent run"><span class="c"># one run, simplified · synthetic trial: 12 sites · 300 subjects · 3 arms</span>
+<span class="k">edc</span>.enrollment_by_site          → 12 sites, 300 subjects
+<span class="k">lab</span>.results_above_uln  ALT, 3×  → 7 subjects flagged
+<span class="k">edc</span>.get_subject       ×7         → 5 of 7 on the 20 mg arm
+<span class="k">safety</span>.subject_adverse_events ×7 → 0 matching AEs recorded
+<span class="k">ctms</span>.list_sites                 → 3 of 7 at a single site
+<span class="k">queries</span>.draft_data_query ×5     → <span class="ok">held for human approval</span>
+<span class="c"># 32 tool calls · 5 MCP servers · 18 tools</span></pre>
+    <div class="feature-body">
+      <div class="split">
+        <div>
+          <h4>What it caught</h4>
+          <p>Seven patients with liver readings above three times the upper limit, none recorded as a safety event. That gap only shows up when lab and safety data are joined, which is exactly the check people skip under time pressure.</p>
+        </div>
+        <div>
+          <h4>Guardrails I designed</h4>
+          <ul>
+            <li>Read-only everywhere except drafting a site query</li>
+            <li>Approval happens outside the agent, so it can't approve itself</li>
+            <li>Daily draft limit and duplicate checks</li>
+            <li>Lab connector shares patient IDs only, keeping the blind</li>
+            <li>Every number traceable to a tool call; every action logged</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Why five connectors</h4>
+          <p>Different teams and vendors own these systems, each with its own access rules. One server per system lets each have its own permissions and be swapped out without rebuilding the agent.</p>
+        </div>
+        <div>
+          <h4>How I'd measure it</h4>
+          <p>Review hours saved per week, real issues caught that people missed, and the draft approval rate as the quality signal before widening the agent's permissions.</p>
+        </div>
+      </div>
+      <p class="takeaway">The model was the easy part. The product decisions were what the agent may do, where a person must step in, and how to make every finding traceable.</p>
+    </div>
+  </article>
+</section>
+
+<section id="work">
+  <div class="sec-head"><h2>Selected work</h2><span class="label">What I owned</span></div>
+  <div class="cases">
+    <article class="case">
+      <div class="meta"><span class="org">IQVIA</span><span class="when">2020 – 2026</span></div>
+      <div class="body">
+        <h3>Enterprise AI/ML platform, 0 to 1</h3>
+        <p>Owned vision, strategy and roadmap for a platform that other product teams built on. Made internal APIs usable by AI agents through tool definitions and MCP servers, and connected 5+ upstream and downstream systems. Presented business cases and multi-year roadmaps to senior leadership.</p>
+        <span class="metric">40% adoption · 90+ features · 15% faster time-to-market · 25% more automation</span>
+      </div>
+    </article>
+    <article class="case">
+      <div class="meta"><span class="org">IQVIA</span><span class="when">2020 – 2026</span></div>
+      <div class="body">
+        <h3>GenAI document processing, built on evals</h3>
+        <p>Owned the roadmap and partnered with AI engineering on RAG. Set up a 250-document golden set so every change was measured before release, added grounding and guardrails, ran AI risk and bias checks, and routed uncertain outputs to human review.</p>
+        <span class="metric">Field accuracy 60% → 90% · ~10% to human review · 35% less manual effort</span>
+      </div>
+    </article>
+    <article class="case">
+      <div class="meta"><span class="org">IQVIA</span><span class="when">2020 – 2026</span></div>
+      <div class="body">
+        <h3>CDAS clinical data platform, on-prem to AWS</h3>
+        <p>Led the platform's modernization to AWS, including SQL Server and API migration and multi-source ingestion and orchestration. The design was metadata-driven: metadata lands in the catalog ahead of the data, transformations are defined on that metadata, then data flows through raw, curated and consumption zones in Snowflake, monitored with Datadog and CloudWatch.</p>
+        <span class="metric">GxP · 21 CFR Part 11 · GDPR · CCPA</span>
+      </div>
+    </article>
+    <article class="case">
+      <div class="meta"><span class="org">IQVIA</span><span class="when">2020 – 2026</span></div>
+      <div class="body">
+        <h3>Patient-facing clinical trial app</h3>
+        <p>Defined onboarding, identity, roles and consent management for an app used by about 2M people in India. Shipped a caregiver visibility feature that lifted patient adherence by more than 40%.</p>
+        <span class="metric">~2M users · 40%+ adherence improvement</span>
+      </div>
+    </article>
+    <article class="case">
+      <div class="meta"><span class="org">GlobalLogic · Mars Petcare</span><span class="when">2018 – 2020</span></div>
+      <div class="body">
+        <h3>Digital health platform for 400+ hospitals</h3>
+        <p>Led strategy and roadmap for bookings, payments and guided doctor selection. Mid-way, the polished designs built with the customer would have stretched a 6-month MVP past 14 months. I got the customer and design team to hold the MVP date and defer the richer screens to later releases.</p>
+        <span class="metric">Conversion 22% → 35% · ~18% less payment drop-off · 30% faster releases</span>
+      </div>
+    </article>
+    <article class="case">
+      <div class="meta"><span class="org">GlobalLogic</span><span class="when">2018 – 2020</span></div>
+      <div class="body">
+        <h3>Multi-product SaaS API platform</h3>
+        <p>Defined a reusable microservices architecture with REST APIs, API contracts and self-service configuration. Also led the retirement of a legacy feature, moving users to its replacement with planned communications.</p>
+        <span class="metric">300+ teams adopted · 40% lower latency</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="strengths">
+  <div class="sec-head"><h2>Where I'm strongest</h2></div>
+  <div class="strengths">
+    <div>
+      <h3>AI product judgment</h3>
+      <p>Evals before launch, guardrails and human-in-the-loop by design, and clear rules on what an agent may and may not do.</p>
+      <span class="stack">RAG · golden sets · MCP · agents · responsible AI</span>
+    </div>
+    <div>
+      <h3>Platform thinking</h3>
+      <p>Turning many teams' one-off needs into reusable capabilities, API contracts and self-service, then driving adoption across the company.</p>
+      <span class="stack">API contracts · multi-tenant SaaS · microservices</span>
+    </div>
+    <div>
+      <h3>Regulated data, done properly</h3>
+      <p>Healthcare and life sciences data with governance, lineage, MDM and audit readiness built in from the start.</p>
+      <span class="stack">HIPAA · GxP · 21 CFR Part 11 · FHIR/HL7 · GDPR</span>
+    </div>
+    <div>
+      <h3>Technical depth</h3>
+      <p>Started as an engineer. I query the data myself, review payloads, and hold my own in architecture reviews.</p>
+      <span class="stack">SQL · Databricks · Snowflake · PySpark · AWS · Claude Code</span>
+    </div>
+    <div>
+      <h3>Leading teams</h3>
+      <p>Managed 8 direct reports, mentored 30+ PMs and engineers, and ran delivery across 6 agile squads at about 90% on-time releases.</p>
+      <span class="stack">OKRs · release planning · SAFe · vendor management</span>
+    </div>
+    <div>
+      <h3>Strategy grounding</h3>
+      <p>MBA and ongoing doctoral research at IIM Lucknow on platform strategy and AI adoption, which shapes how I frame build, buy and ecosystem decisions.</p>
+      <span class="stack">business cases · ROI · build vs buy · PR/FAQ</span>
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="sec-head"><h2>Career</h2><span class="label">Engineer → analyst → product</span></div>
+  <ol class="timeline" reversed>
+    <li><span class="yrs">Jul – Oct 2026</span><div class="what"><b>Abacus Insights</b> <span class="r">· Senior PM, Platforms</span><p class="note">HIPAA-compliant multi-tenant healthcare data platform; cloud migration assessment.</p></div></li>
+    <li><span class="yrs">2020 – 2026</span><div class="what"><b>IQVIA</b> <span class="r">· Lead / Senior Product Manager</span><p class="note">AI/ML and clinical data platforms, GenAI, patient-facing apps. Led other PMs.</p></div></li>
+    <li><span class="yrs">2018 – 2020</span><div class="what"><b>GlobalLogic</b> <span class="r">· Product Manager</span><p class="note">Consumer digital health and multi-product SaaS platforms.</p></div></li>
+    <li><span class="yrs">2016 – 2018</span><div class="what"><b>Orange Business Services</b> <span class="r">· Technical Business Analyst</span><p class="note">Predictive forecasting and ML monitoring; 18% better inventory accuracy.</p></div></li>
+    <li><span class="yrs">2015 – 2016</span><div class="what"><b>NCR Corporation</b> <span class="r">· Senior Software Engineer</span><p class="note">Oracle EBS financial back office, order-to-cash.</p></div></li>
+    <li><span class="yrs">2011 – 2015</span><div class="what"><b>Eastern Software Systems</b> <span class="r">· Senior Software Engineer</span><p class="note">Oracle ERP for 20+ international clients.</p></div></li>
+  </ol>
+</section>
+
+<section id="education">
+  <div class="sec-head"><h2>Education &amp; credentials</h2></div>
+  <div class="edu">
+    <div>
+      <span class="label">Education</span>
+      <ul>
+        <li>IIM Lucknow, PhD Scholar (EFPM), Strategic Management<span>2025 – present · research includes platform strategy and AI adoption</span></li>
+        <li>IIM Lucknow, MBA (PGPWE)<span>2022 – 2024</span></li>
+        <li>Roorkee Institute of Technology, B.Tech, Computer Science<span>2007 – 2011</span></li>
+      </ul>
+    </div>
+    <div>
+      <span class="label">Certifications</span>
+      <ul>
+        <li>Certified Scrum Product Owner (CSPO)</li>
+        <li>Scrum Master · SAFe</li>
+        <li>AWS Cloud Practitioner</li>
+        <li>Change Management &amp; Negotiation<span>IÉSEG School of Management, Paris</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="closing">Looking for a Senior, Lead or Principal PM role in AI, data or platforms.</p>
+  <div class="contact">
+    <span class="mail">amritpandeycareer@gmail.com</span>
+    <a href="https://www.linkedin.com/in/eramritanshupandey/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <span class="label">Bengaluru · Pune · Hyderabad · NCR · Remote</span>
+  </div>
+  <p class="fine">The Clinical Data Review Agent is a personal prototype on synthetic data. Work at past employers is described at the level of what I owned; no confidential material is shown.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn');
+  var mail=document.getElementById('mail');
+  btn.addEventListener('click',function(){
+    var text=mail.textContent.trim();
+    function fallback(){
+      var r=document.createRange();r.selectNodeContents(mail);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      btn.textContent='Selected, press Ctrl+C';
+    }
+    try{
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)},fallback);
+    }catch(e){fallback()}
+  });
+})();
+</script>
+
+</body>
+</html>
