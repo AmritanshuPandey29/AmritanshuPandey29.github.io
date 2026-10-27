@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Amritanshu Pandey, Senior Product Manager for AI, data and cloud platforms. Available to join immediately.">
+<meta name="description" content="Amritanshu Pandey, Senior Product Manager for AI, data and cloud platforms. IIM Lucknow MBA. Available to join immediately.">
 <title>Amritanshu Pandey</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,7 @@
   --panel-dim:#8297A8;
   --panel-key:#E9A562;
   --panel-ok:#5FD0BF;
+  --p1:#E3F4EC; --p2:#E2EEF9; --p3:#ECE8F8; --p4:#FCEBDD; --p5:#FBF3D9; --p6:#F8E6EA;
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -37,7 +38,7 @@
     --bg:#11181F; --surface:#18222B; --ink:#E6ECF1; --muted:#97A5B2; --line:#2A3743;
     --accent:#E39A52; --accent-soft:#2E2318; --signal:#4CC2B2; --signal-soft:#15302C;
     --plan:#A3A7F0; --plan-soft:#23253F;
-    --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; --panel-key:#E9A562; --panel-ok:#5FD0BF;
+    --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; --panel-key:#E9A562; --panel-ok:#5FD0BF; --p1:#1A2C26; --p2:#1A2633; --p3:#242238; --p4:#2E241B; --p5:#2C2A1B; --p6:#2E1F25;
     color-scheme:dark;
   }
 }
@@ -45,7 +46,7 @@
   --bg:#11181F; --surface:#18222B; --ink:#E6ECF1; --muted:#97A5B2; --line:#2A3743;
   --accent:#E39A52; --accent-soft:#2E2318; --signal:#4CC2B2; --signal-soft:#15302C;
   --plan:#A3A7F0; --plan-soft:#23253F;
-  --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; --panel-key:#E9A562; --panel-ok:#5FD0BF;
+  --panel:#0A1016; --panel-ink:#DCE6EE; --panel-dim:#7D92A3; --panel-key:#E9A562; --panel-ok:#5FD0BF; --p1:#1A2C26; --p2:#1A2633; --p3:#242238; --p4:#2E241B; --p5:#2C2A1B; --p6:#2E1F25;
   color-scheme:dark;
 }
 
@@ -203,6 +204,80 @@ h2{font-size:30px;font-weight:700;letter-spacing:-.01em}
 .looking b{font-weight:600}
 @media (max-width:760px){ .value{grid-template-columns:1fr} }
 
+/* Credentials, readable results, rules */
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cred{font-size:14px;padding:5px 12px;border-radius:6px;border:1px solid var(--accent);background:var(--accent-soft)}
+.cred b{font-weight:600;margin-right:4px}
+.result{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--f-body)}
+.result .m{white-space:nowrap;font-size:14.5px;font-weight:600;color:var(--ink);padding:3px 10px;border-radius:6px;background:var(--signal-soft)}
+.rules-head{font-size:18px;margin:30px 0 12px}
+.rules{border:0;gap:16px}
+.rules div,.rules div + div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;gap:6px;align-content:start}
+.rules span{font-size:14.5px}
+@media (max-width:560px){ .rules div + div{border-top:1px solid var(--line);padding-left:20px} }
+
+/* Symmetry and credential fixes */
+.creds{display:inline-flex;flex-wrap:wrap;gap:0;margin-top:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.creds > div{display:grid;gap:2px;padding:10px 18px;min-width:0}
+.creds > div + div{border-left:1px solid var(--line)}
+.creds span{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.creds b{font-weight:600;font-size:15px}
+@media (max-width:640px){ .creds{display:flex;flex-direction:column} .creds > div + div{border-left:0;border-top:1px solid var(--line)} }
+.result .m{white-space:normal}
+.value > div,.card,.uc{display:flex;flex-direction:column}
+.value > div > :last-child,.card > :last-child,.uc > :last-child{margin-top:auto}
+.value > div{gap:10px}
+.card{gap:12px}
+.uc{gap:8px;align-items:flex-start}
+.card-top{flex-direction:column-reverse;align-items:flex-start;gap:4px}
+.wins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px}
+@media (max-width:520px){ .wins{grid-template-columns:1fr 1fr} }
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.split > div{min-width:0}
+.split h4{font:600 12.5px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.split ul{padding-left:18px;display:grid;gap:3px;font-size:15px}
+@media (max-width:640px){ .split{grid-template-columns:1fr} }
+
+/* Pastel palette */
+.proof{gap:12px;border-bottom:0;padding-top:28px}
+.proof div,.proof div + div{padding:18px 18px;border:0;border-radius:12px}
+.proof div:nth-child(1){background:var(--p1)}
+.proof div:nth-child(2){background:var(--p2)}
+.proof div:nth-child(3){background:var(--p3)}
+.proof div:nth-child(4){background:var(--p4)}
+@media (max-width:640px){ .proof div:nth-child(3){padding-left:18px} .proof div:nth-child(n+3){border-top:0} }
+.value > div{border:0;border-radius:12px}
+.value > div:nth-child(1){background:var(--p3)}
+.value > div:nth-child(2){background:var(--p1)}
+.value > div:nth-child(3){background:var(--p4)}
+.looking{background:var(--p5)}
+.grid2 > .card,.grid3 > .uc{border-color:transparent;border-radius:12px}
+.grid2 > .card:nth-child(4n+1){background:var(--p1)}
+.grid2 > .card:nth-child(4n+2){background:var(--p2)}
+.grid2 > .card:nth-child(4n+3){background:var(--p4)}
+.grid2 > .card:nth-child(4n+4){background:var(--p3)}
+.grid3 > .uc:nth-child(6n+1){background:var(--p1)}
+.grid3 > .uc:nth-child(6n+2){background:var(--p2)}
+.grid3 > .uc:nth-child(6n+3){background:var(--p3)}
+.grid3 > .uc:nth-child(6n+4){background:var(--p4)}
+.grid3 > .uc:nth-child(6n+5){background:var(--p5)}
+.grid3 > .uc:nth-child(6n+6){background:var(--p6)}
+.rules div:nth-child(1),.rules div + div:nth-child(1){background:var(--p2)}
+.rules div:nth-child(2){background:var(--p5)}
+.rules div:nth-child(3){background:var(--p6)}
+.rules div,.rules div + div{border-color:transparent}
+.chip{background:var(--surface);border-color:transparent}
+.result .m{background:var(--surface);color:var(--signal)}
+.creds{background:var(--p2);border-color:transparent}
+.creds > div + div{border-color:var(--surface)}
+.stack{background:var(--p5);border-color:transparent}
+.steps > div:nth-child(1){background:var(--p1)}
+.steps > div:nth-child(2){background:var(--p2)}
+.steps > div:nth-child(3){background:var(--p3)}
+.path li:nth-child(1)::before{background:var(--p1);border-color:var(--signal)}
+.path li:nth-child(2)::before{background:var(--p2);border-color:var(--signal)}
+.path li:nth-child(3)::before{background:var(--p3);border-color:var(--signal)}
+
 /* B2B/B2C */
 .market .card ul{gap:6px}
 
@@ -239,7 +314,12 @@ footer .contact{margin-top:18px}
   </div>
   <h1>Amritanshu Pandey</h1>
   <p class="role">Senior Product Manager · AI, Data &amp; Cloud Platforms</p>
-  <p class="thesis">I build platforms that turn scattered systems into one workflow people trust. I took <strong>IQVIA's clinical data platform to 40% enterprise adoption</strong> and a consumer health app from 20 hospitals to 400+. These days I also build AI agents myself.</p>
+  <div class="creds" aria-label="Education">
+    <div><span>IIM Lucknow</span><b>MBA</b></div>
+    <div><span>IIM Lucknow</span><b>PhD Scholar, Strategic Management</b></div>
+    <div><span>B.Tech</span><b>Computer Science</b></div>
+  </div>
+  <p class="thesis">I build platforms that turn scattered systems into one workflow people trust. I took <strong>an enterprise clinical data platform to 40% adoption</strong> and a consumer health app from 20 hospitals to 400+. I also design and build GenAI and agentic AI solutions hands-on.</p>
   <div class="contact">
     <span class="mail" id="mail">er.amritanshupandey@gmail.com</span>
     <button class="copy" id="copyBtn" type="button">Copy email</button>
@@ -249,10 +329,10 @@ footer .contact{margin-top:18px}
   <div class="path" aria-label="Career path">
     <span class="label">15 years in tech · 10 in product</span>
     <ol>
-      <li><b>Software Engineer</b><span>2011 – 2016</span></li>
-      <li><b>Technical Business Analyst</b><span>2016 – 2018</span></li>
-      <li><b>Product Owner</b><span>Backlog &amp; delivery</span></li>
-      <li><b>Product Manager</b><span>Strategy &amp; outcomes · 2018 – today</span></li>
+      <li><b>Software Engineer</b><span>2011 – 2015</span></li>
+      <li><b>Technical Business Analyst</b><span>2015 – 2016</span></li>
+      <li><b>Product Owner</b><span>2016 – 2020</span></li>
+      <li><b>Senior Product Manager</b><span>2020 – 2026</span></li>
     </ol>
   </div>
 </header>
@@ -264,6 +344,7 @@ footer .contact{margin-top:18px}
     <a href="#work">Featured work</a>
     <a href="#domains">Domains</a>
     <a href="#cloud">Cloud &amp; data</a>
+    <a href="#engineering">Engineering</a>
     <a href="#genai">GenAI</a>
     <a href="#agents">Agentic AI</a>
     <a href="#ai">AI toolkit</a>
@@ -283,22 +364,22 @@ footer .contact{margin-top:18px}
 
 <!-- VALUE -->
 <section id="value" class="value-sec">
-  <div class="sec-head"><span class="label">Where I add the most value</span><h2>Bring me in when you need this</h2></div>
+  <div class="sec-head"><span class="label">How I can help</span><h2>Where I can contribute most</h2></div>
   <div class="value">
     <div>
-      <h3>AI and data platform teams</h3>
+      <h3>AI and data platforms</h3>
       <p>You need agents, RAG or GenAI moved from demo to production with evals and guardrails.</p>
-      <span class="proofline">Led six GenAI use cases · built an agent myself</span>
+      <span class="proofline result"><span class="m">Led six GenAI use cases</span><span class="m">built an agent myself</span></span>
     </div>
     <div>
       <h3>Regulated industries</h3>
       <p>You're in healthcare, life sciences, finance or anywhere audits matter, and need to ship fast without failing a compliance review.</p>
-      <span class="proofline">Shipped under HIPAA, GxP and 21 CFR Part 11</span>
+      <span class="proofline result"><span class="m">Shipped under HIPAA, GDPR, GxP and 21 CFR Part 11</span></span>
     </div>
     <div>
       <h3>0 to 1, then scale</h3>
       <p>You have a platform that works for a few teams and need it working for the whole company.</p>
-      <span class="proofline">CDAS 15% → 40% adoption · 20 → 400+ hospitals</span>
+      <span class="proofline result"><span class="m">CDAS 15%&nbsp;→&nbsp;40% adoption</span><span class="m">20&nbsp;→&nbsp;400+ hospitals</span></span>
     </div>
   </div>
   <p class="looking"><b>Roles I'm looking for:</b> Senior, Lead or Principal PM in AI, data or cloud platforms. Available to join immediately.</p>
@@ -306,7 +387,7 @@ footer .contact{margin-top:18px}
 
 <!-- FEATURED WORK -->
 <section id="work">
-  <div class="sec-head"><span class="label">Featured work</span><h2>Three things I'd show you first</h2></div>
+  <div class="sec-head"><span class="label">Featured work</span><h2>Signature products I've led</h2></div>
   <div class="feat">
 
     <article class="file">
@@ -354,35 +435,35 @@ footer .contact{margin-top:18px}
 
 <!-- DOMAINS -->
 <section id="domains">
-  <div class="sec-head"><span class="label">Domains</span><h2>Four industries, one way of working</h2><p class="sec-intro">Different users and rules each time, the same job: find where the workflow breaks and build the platform that fixes it.</p></div>
+  <div class="sec-head"><span class="label">Domains</span><h2>Industry experience</h2><p class="sec-intro">Different users and rules each time, the same job: find where the workflow breaks and build the platform that fixes it.</p></div>
   <div class="grid2">
 
     <div class="card">
       <div class="card-top"><h3>Life sciences &amp; clinical trials</h3><span class="where">IQVIA · Abacus</span></div>
       <p>Clinical data management, review and reconciliation across EDC, labs, safety and IRT; patient-facing trial apps; US healthcare payer data.</p>
       <div class="chips"><span class="chip">21 CFR Part 11</span><span class="chip">GxP</span><span class="chip">ICH-GCP</span><span class="chip">CDISC SDTM</span><span class="chip">HIPAA</span><span class="chip">GDPR</span><span class="chip">FHIR &amp; HL7</span><span class="chip">Consent management</span><span class="chip">Safety reconciliation</span></div>
-      <span class="hl">40% platform adoption · ~2M patients</span>
+      <span class="hl result"><span class="m">40% platform adoption</span><span class="m">~2M patients</span></span>
     </div>
 
     <div class="card">
       <div class="card-top"><h3>Pet healthcare</h3><span class="where">GlobalLogic · Mars Petcare</span></div>
       <p>Booking, payments and reminders for pet owners, plus scheduling and capacity tools for receptionists, vets and hospital managers.</p>
       <div class="chips"><span class="chip">Consumer funnels</span><span class="chip">Payments &amp; UPI</span><span class="chip">Retention</span><span class="chip">Multi-site rollout</span><span class="chip">A/B testing</span><span class="chip">Go-to-market</span></div>
-      <span class="hl">400+ hospitals · 25,000 users in 8 weeks</span>
+      <span class="hl result"><span class="m">400+ hospitals</span><span class="m">25,000 users in 8 weeks</span></span>
     </div>
 
     <div class="card">
       <div class="card-top"><h3>Supply chain</h3><span class="where">Orange · NCR · Eastern Software</span></div>
       <p>Demand forecasting and inventory accuracy, manufacturing operations data, and the ERP flows that move goods and money.</p>
       <div class="chips"><span class="chip">Forecasting</span><span class="chip">Inventory</span><span class="chip">BOM</span><span class="chip">Order-to-cash</span><span class="chip">Procure-to-pay</span><span class="chip">Logistics</span><span class="chip">Oracle ERP &amp; EBS</span></div>
-      <span class="hl">18% better inventory accuracy · 20+ clients</span>
+      <span class="hl result"><span class="m">18% better inventory accuracy</span><span class="m">20+ clients</span></span>
     </div>
 
     <div class="card">
       <div class="card-top"><h3>Telecom</h3><span class="where">Orange Business Services</span></div>
       <p>Network and IT asset inventory, network configuration and data center infrastructure, and near real-time event processing for operations.</p>
       <div class="chips"><span class="chip">Network inventory</span><span class="chip">SDN</span><span class="chip">Data center infra</span><span class="chip">Event processing</span><span class="chip">ML monitoring</span></div>
-      <span class="hl">Owned the network &amp; IT asset catalog</span>
+      <span class="hl result"><span class="m">Owned the network &amp; IT asset catalog</span></span>
     </div>
 
   </div>
@@ -390,7 +471,7 @@ footer .contact{margin-top:18px}
 
 <!-- CLOUD -->
 <section id="cloud">
-  <div class="sec-head"><span class="label">Cloud &amp; data platforms</span><h2>Where my platforms run</h2></div>
+  <div class="sec-head"><span class="label">Cloud</span><h2>Cloud and data platforms</h2></div>
   <div class="grid2">
 
     <div class="card">
@@ -436,9 +517,51 @@ footer .contact{margin-top:18px}
   </div>
 </section>
 
+<!-- ENGINEERING -->
+<section id="engineering">
+  <div class="sec-head"><span class="label">Engineering foundation</span><h2>APIs, architecture and databases</h2><p class="sec-intro">I started as an engineer, so I can go deep with architects on how a platform is built, not only on what it does.</p></div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-top"><h3>APIs</h3><span class="where">Built and designed</span></div>
+      <ul>
+        <li>Built APIs as an engineer and defined API contracts as a product lead</li>
+        <li>REST and GraphQL APIs offered as products, with self-service configuration</li>
+        <li>Made internal APIs usable by AI agents through tool definitions and MCP servers</li>
+      </ul>
+      <div class="chips"><span class="chip">REST</span><span class="chip">GraphQL</span><span class="chip">API contracts</span><span class="chip">JSON payloads</span><span class="chip">API Gateway</span><span class="chip">MCP</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top"><h3>Monolith to microservices</h3><span class="where">GlobalLogic</span></div>
+      <ul>
+        <li>Moved a monolithic platform to reusable microservices for a multi-product SaaS</li>
+        <li>Event-driven integrations between services</li>
+        <li>Adopted by 300+ teams, with latency cut from 2.5s to 1.5s</li>
+      </ul>
+      <div class="chips"><span class="chip">Microservices</span><span class="chip">Event-driven</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">CI/CD</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top"><h3>Micro-frontends</h3><span class="where">Front-end architecture</span></div>
+      <ul>
+        <li>Split a large front end into independently deployable micro-frontends</li>
+        <li>Teams could build and release their part of the UI on their own schedule</li>
+      </ul>
+      <div class="chips"><span class="chip">Micro-frontends</span><span class="chip">Independent releases</span></div>
+    </div>
+    <div class="card">
+      <div class="card-top"><h3>SQL and Oracle</h3><span class="where">Hands-on since 2011</span></div>
+      <ul>
+        <li>Built Oracle ERP applications in PHP, Oracle Forms and Oracle Reports for 20+ clients</li>
+        <li>Delivered Oracle EBS financial back-office systems at NCR</li>
+        <li>Led the SQL Server migration to AWS for CDAS; hands-on SQL for analysis and data checks</li>
+      </ul>
+      <div class="chips"><span class="chip">SQL</span><span class="chip">Oracle</span><span class="chip">Oracle EBS</span><span class="chip">Oracle Forms &amp; Reports</span><span class="chip">SQL Server</span><span class="chip">Snowflake</span><span class="chip">MongoDB</span><span class="chip">Data modelling</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- GENAI -->
 <section id="genai">
-  <div class="sec-head"><span class="label">Generative AI</span><h2>GenAI I've led, from idea to production</h2><p class="sec-intro">Six use cases at IQVIA. In each one AI does the legwork and a person makes the call.</p></div>
+  <div class="sec-head"><span class="label">Generative AI</span><h2>GenAI use cases</h2><p class="sec-intro">Six use cases at IQVIA. In each one AI does the legwork and a person makes the call.</p></div>
 
   <article class="file">
     <div class="file-body">
@@ -472,8 +595,8 @@ footer .contact{margin-top:18px}
   </article>
 
   <div class="grid3">
-    <div class="uc"><span class="pill live">Shipped</span><h3>Document processing</h3><p>Extracts fields from clinical documents, gated by a 250-document golden set.</p><span class="hl">Accuracy 60% → 90%</span></div>
-    <div class="uc"><span class="pill live">Shipped</span><h3>Requirements assistant</h3><p>Turns call transcripts into user stories, acceptance criteria and open questions.</p><span class="hl">60 hours back per sprint</span></div>
+    <div class="uc"><span class="pill live">Shipped</span><h3>Document processing</h3><p>Extracts fields from clinical documents, gated by a 250-document golden set.</p><span class="hl result"><span class="m">Accuracy 60%&nbsp;→&nbsp;90%</span></span></div>
+    <div class="uc"><span class="pill live">Shipped</span><h3>Requirements assistant</h3><p>Turns call transcripts into user stories, acceptance criteria and open questions.</p><span class="hl result"><span class="m">60 hours back per sprint</span></span></div>
     <div class="uc"><span class="pill live">Shipped</span><h3>Review explanations</h3><p>Tells reviewers why a record was flagged across EDC, IRT and safety. AI explains, people decide.</p></div>
     <div class="uc"><span class="pill live">Shipped</span><h3>Email to Jira triage</h3><p>Classifies production emails, extracts the details and drafts the ticket for a person to submit.</p></div>
     <div class="uc"><span class="pill live">Shipped</span><h3>Test case generation</h3><p>First-cut and edge-case tests from user stories, reviewed with QA and SMEs.</p></div>
@@ -483,29 +606,30 @@ footer .contact{margin-top:18px}
 
 <!-- AGENTIC -->
 <section id="agents">
-  <div class="sec-head"><span class="label">Agentic AI</span><h2>Agents, owned at scale and built by hand</h2></div>
+  <div class="sec-head"><span class="label">Agentic AI</span><h2>AI agents: owned at scale, built by hand</h2></div>
   <div class="grid2">
     <div class="card">
       <div class="card-top"><h3>Enterprise AI agents</h3><span class="where">IQVIA · Product owner</span></div>
       <p>Connected AI agents to 5+ upstream and downstream clinical systems through reusable tools and MCP integrations. I owned the use case, tool definitions, safety boundaries and acceptance criteria; engineering built it.</p>
-      <span class="hl">~25% more workflow automation</span>
+      <span class="hl result"><span class="m">~25% more workflow automation</span></span>
     </div>
     <div class="card">
       <div class="card-top"><h3>Clinical data review agent</h3><span class="where">Personal build · hands-on</span></div>
       <p>Five MCP servers and 18 tools I wrote in Python over a synthetic trial in Databricks, with Claude as the reasoning engine. It found 7 unreported safety signals in one run. <a href="#work">See the run ↑</a></p>
-      <span class="hl">32 tool calls · hours of review in minutes</span>
+      <span class="hl result"><span class="m">32 tool calls</span><span class="m">hours of review in minutes</span></span>
     </div>
   </div>
+  <h3 class="rules-head">How I design agents</h3>
   <div class="rules">
-    <div><b>Narrow tools</b><span>Parameterized queries, never raw SQL</span></div>
-    <div><b>Draft, never act</b><span>Approval is a human step, not a tool</span></div>
-    <div><b>Traceable</b><span>Every number comes from a tool call</span></div>
+    <div><b>Narrow tools</b><span>Each tool does one job through parameterized queries. The model passes values and never writes raw SQL.</span></div>
+    <div><b>Draft, never act</b><span>The agent can only draft. Approval is a separate human step, so it can never approve its own work.</span></div>
+    <div><b>Traceable</b><span>Every number in the output comes from a tool call, and every action is logged for audit.</span></div>
   </div>
 </section>
 
 <!-- AI FOUNDATIONS -->
 <section id="ai">
-  <div class="sec-head"><span class="label">AI &amp; ML toolkit</span><h2>What I work with</h2></div>
+  <div class="sec-head"><span class="label">Tools</span><h2>AI and ML toolkit</h2></div>
   <div class="stack" aria-label="AI toolkit" style="margin-top:0">
     <div class="stack-row"><span>Vector search</span><div class="chips"><span class="chip">Pinecone</span><span class="chip">FAISS</span><span class="chip">Embeddings</span><span class="chip">Semantic search</span></div></div>
     <div class="stack-row"><span>Agents</span><div class="chips"><span class="chip">MCP Python SDK</span><span class="chip">Tool design</span><span class="chip">Claude</span><span class="chip">Human-in-the-loop</span></div></div>
@@ -518,7 +642,7 @@ footer .contact{margin-top:18px}
 
 <!-- B2B & B2C -->
 <section id="markets" class="market">
-  <div class="sec-head"><span class="label">B2B &amp; B2C</span><h2>Both sides of the market</h2></div>
+  <div class="sec-head"><span class="label">Markets</span><h2>B2B and B2C experience</h2></div>
   <div class="grid2">
     <div class="card">
       <div class="card-top"><h3>Enterprise &amp; SaaS</h3><span class="where">US · Europe</span></div>
@@ -541,7 +665,7 @@ footer .contact{margin-top:18px}
 
 <!-- CAREER -->
 <section id="career">
-  <div class="sec-head"><span class="label">Career</span><h2>Where I've worked</h2></div>
+  <div class="sec-head"><span class="label">Career</span><h2>Career history</h2></div>
   <ol class="timeline" reversed>
     <li><span class="yrs">Jul – Oct 2026</span><div class="what"><b>Abacus Insights</b> <span class="r">· Senior Product Manager, Platforms</span></div></li>
     <li><span class="yrs">2020 – 2026</span><div class="what"><b>IQVIA</b> <span class="r">· Senior Product Manager</span></div></li>
