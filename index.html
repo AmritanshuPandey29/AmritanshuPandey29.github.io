@@ -193,6 +193,16 @@ h2{font-size:30px;font-weight:700;letter-spacing:-.01em}
 @media (max-width:760px){ .steps,.grid3{grid-template-columns:1fr 1fr} }
 @media (max-width:560px){ .steps,.grid3,.rules{grid-template-columns:1fr} .rules div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)} }
 
+/* Value */
+.value{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.value > div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;padding:20px 22px;display:grid;gap:8px;align-content:start;min-width:0}
+.value h3{font-size:19px}
+.value p{font-size:15px}
+.proofline{font-family:var(--f-mono);font-size:12.5px;color:var(--signal);font-weight:500}
+.looking{margin-top:20px;font-size:16px;padding:14px 18px;border-radius:8px;background:var(--accent-soft)}
+.looking b{font-weight:600}
+@media (max-width:760px){ .value{grid-template-columns:1fr} }
+
 /* B2B/B2C */
 .market .card ul{gap:6px}
 
@@ -250,6 +260,7 @@ footer .contact{margin-top:18px}
 
 <nav class="jump" aria-label="Sections">
   <div class="wrap">
+    <a href="#value">Where I fit</a>
     <a href="#work">Featured work</a>
     <a href="#domains">Domains</a>
     <a href="#cloud">Cloud &amp; data</a>
@@ -269,6 +280,29 @@ footer .contact{margin-top:18px}
   <div><span class="num">60<small>→</small>90%</span><p>GenAI accuracy, measured on a 250-document golden set</p></div>
   <div><span class="num">~2M</span><p>patients on a clinical trial app I helped shape</p></div>
 </div>
+
+<!-- VALUE -->
+<section id="value" class="value-sec">
+  <div class="sec-head"><span class="label">Where I add the most value</span><h2>Bring me in when you need this</h2></div>
+  <div class="value">
+    <div>
+      <h3>AI and data platform teams</h3>
+      <p>You need agents, RAG or GenAI moved from demo to production with evals and guardrails.</p>
+      <span class="proofline">Led six GenAI use cases · built an agent myself</span>
+    </div>
+    <div>
+      <h3>Regulated industries</h3>
+      <p>You're in healthcare, life sciences, finance or anywhere audits matter, and need to ship fast without failing a compliance review.</p>
+      <span class="proofline">Shipped under HIPAA, GxP and 21 CFR Part 11</span>
+    </div>
+    <div>
+      <h3>0 to 1, then scale</h3>
+      <p>You have a platform that works for a few teams and need it working for the whole company.</p>
+      <span class="proofline">CDAS 15% → 40% adoption · 20 → 400+ hospitals</span>
+    </div>
+  </div>
+  <p class="looking"><b>Roles I'm looking for:</b> Senior, Lead or Principal PM in AI, data or cloud platforms. Available to join immediately.</p>
+</section>
 
 <!-- FEATURED WORK -->
 <section id="work">
@@ -539,7 +573,7 @@ footer .contact{margin-top:18px}
 </section>
 
 <footer>
-  <p class="closing">Looking for a Senior, Lead or Principal PM role in AI, data or cloud platforms.</p>
+  <p class="closing">Let's talk.</p>
   <div class="contact">
     <span class="mail">er.amritanshupandey@gmail.com</span>
     <a href="https://www.linkedin.com/in/eramritanshupandey/" target="_blank" rel="noopener">LinkedIn ↗</a>
